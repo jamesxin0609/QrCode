@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:QrParse"
+             x:Class="QrParse.MainPage"  Title="二维码扫描" >
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="设置" Clicked="ToolbarItem_Activated"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+    <StackLayout Orientation="Vertical">
+	    <Button Text="开始扫描" 
+           VerticalOptions="CenterAndExpand" 
+           HorizontalOptions="CenterAndExpand"  Clicked="Button_ClickedAsync" TextColor="Pink" BorderColor="Pink" BorderWidth="2" BorderRadius="3" BackgroundColor="White"/>
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

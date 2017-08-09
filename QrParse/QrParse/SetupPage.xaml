@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QrParse.SetupPage">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0, 20, 0, 0"
+                    Android="10, 20, 10, 20"
+                    WinPhone="20, 20, 20, 20" />
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Image Source="icon.png" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="版本：V1.0.0" TextColor="Gray" HorizontalOptions="CenterAndExpand"/>
+            <Label />
+            <StackLayout HeightRequest="1" BackgroundColor="Gray"/>
+            <Label Text="Author：James Xin" TextColor="Gray" HorizontalOptions="CenterAndExpand"/>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>
