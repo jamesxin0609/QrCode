@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="QrParse.SetupPage">
+             xmlns:local="clr-namespace:QrParse;assembly=QrParse"
+             x:Class="QrParse.SetupPage" Title="关于">
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness"
                     iOS="0, 20, 0, 0"
@@ -9,12 +10,27 @@
                     WinPhone="20, 20, 20, 20" />
     </ContentPage.Padding>
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical">
-            <Image Source="icon.png" HorizontalOptions="CenterAndExpand"/>
-            <Label Text="版本：V1.0.0" TextColor="Gray" HorizontalOptions="CenterAndExpand"/>
+        <StackLayout Orientation="Vertical" x:Name="stacklayout">
+            <Image  x:Name="logo" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="版本：V1.0.1" TextColor="Gray" HorizontalOptions="CenterAndExpand"/>
             <Label />
             <StackLayout HeightRequest="1" BackgroundColor="Gray"/>
             <Label Text="Author：James Xin" TextColor="Gray" HorizontalOptions="CenterAndExpand"/>
+            <Grid x:Name="grid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Button Text="意见反馈" BackgroundColor="White" Grid.Row="0" Grid.Column="1" Clicked="Button_Clicked_1"/>
+                <Button Text="检查更新" BackgroundColor="White" Grid.Row="1" Grid.Column="1" Clicked="Button_Clicked_1Async"/>
+                <Button Text="邀请好友" BackgroundColor="White" Grid.Row="2" Grid.Column="1" Clicked="Button_Clicked"/>
+            </Grid>
         </StackLayout>
         
     </ContentPage.Content>

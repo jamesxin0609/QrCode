@@ -11,7 +11,7 @@
 namespace QrParse {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("E:\\Xamarin\\Learn\\QrParse\\QrParse\\QrParse\\App.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("E:\\Xamarin\\Release\\QrCode\\QrParse\\QrParse\\App.xaml")]
     public partial class App : global::Xamarin.Forms.Application {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

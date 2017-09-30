@@ -12,9 +12,14 @@ namespace QrParse
 {
     public partial class MainPage : ContentPage
     {
+        SetupPage m_setupPage;
+        WebShowPage m_webShowPage;
         public MainPage()
         {
             InitializeComponent();
+            m_setupPage = new SetupPage();
+            m_webShowPage = new WebShowPage();
+            //Device.StartTimer(new TimeSpan(2000), () => {  DisplayAlert("Alert", "This fired after 2 senconds", "OK"); return false; });
             //this.ToolbarItems.Add(new ToolbarItem {Command= } (,"设置", "", () => { Navigation.PushAsync(new SetupPage()); }));
         }
         public Command CreateCommand { get; private set; }
@@ -33,11 +38,11 @@ namespace QrParse
                     return true;
                 }
             }
-            catch(WebException webex)
+            catch(WebException)
             {
                 return false;
             }
-            catch(Exception e)
+            catch(Exception)
             {
                 return false;
             }
@@ -58,6 +63,8 @@ namespace QrParse
            
             //var scanner = new ZXing.Mobile.MobileBarcodeScanner();
             var scanPage = new ZXingScannerPage();
+            scanPage.Title = "扫描中...";
+            
             scanPage.OnScanResult += (result) => {
                 // Stop scanning
                 scanPage.IsScanning = false;
@@ -72,7 +79,12 @@ namespace QrParse
                     {
                         bool bOpenURL = await DisplayAlert("", "检测到网页连接件，是否跳转到该链接？", "是", "否");
                         if (bOpenURL)
-                            Device.OpenUri(new Uri(result.Text));
+                        {
+                            m_webShowPage.SetWebUrl(result.Text);
+                            await Navigation.PushAsync(m_webShowPage);
+                            
+                        }
+                            //Device.OpenUri(new Uri(result.Text));
                     }
                 });
             };
@@ -81,7 +93,7 @@ namespace QrParse
 
         private void ToolbarItem_Activated(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new SetupPage());
+            Navigation.PushAsync(m_setupPage);
         }
     }
 }

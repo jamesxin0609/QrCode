@@ -1,1 +1,1 @@
-E:\Xamarin\Learn\QrParse\OrCode.UWP\QrCode.UWP.csproj;x86
+E:\Xamarin\Release\QrCode\OrCode.UWP\QrParse.UWP.csproj;x86
